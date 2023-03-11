@@ -23,8 +23,11 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
     mkdir -p /home/gitpod/.local/share/bash-completion/completions
 
 # Update all packages
+USER root
 RUN pacman -Syyu --noconfirm
 RUN pacman -Syyu zsh curl wget --noconfirm
+
+USER gitpod
 
 # Setup git configuration
 COPY git.sh /tmp/
