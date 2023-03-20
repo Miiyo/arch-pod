@@ -37,3 +37,5 @@ RUN bash /tmp/git.sh
 RUN git config --global user.name "ekkusa"
 RUN git config --global user.email "dayesofficial@gmail.com"
 
+# CD into Workspace
+RUN cd /workspace
