@@ -25,11 +25,15 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
 # Update all packages
 USER root
 RUN pacman -Syyu --noconfirm
-RUN pacman -Syyu zsh curl wget --noconfirm
-
-USER gitpod
+RUN pacman -Syyu zsh curl wget neofetch --noconfirm
 
 # Setup git configuration
 COPY git.sh /tmp/
+RUN chmod +x /tmp/git.sh
+USER root
 RUN bash /tmp/git.sh
+
+# Just incase the first doesn't work
+RUN git config --global user.name "ekkusa"
+RUN git config --global user.email "dayesofficial@gmail.com"
 
