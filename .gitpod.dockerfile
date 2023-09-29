@@ -1,5 +1,5 @@
 #Archlinux
-FROM miyouki/arch:arch-miyo
+FROM archlinux/archlinux:latest
 
 ### Gitpod user ###
 COPY sudoers /etc
